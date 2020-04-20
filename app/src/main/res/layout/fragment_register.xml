@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.boxes.screens.register.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryLightColor"
+        tools:context=".screens.register.RegisterFragment">
+
+        <EditText
+            android:id="@+id/username_edittext_registration"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/rounded_edittext_register_login"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectphoto_button_register" />
+
+        <EditText
+            android:id="@+id/email_edittext_registration"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:background="@drawable/rounded_edittext_register_login"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/username_edittext_registration"
+            app:layout_constraintStart_toStartOf="@+id/username_edittext_registration"
+            app:layout_constraintTop_toBottomOf="@+id/username_edittext_registration" />
+
+        <EditText
+            android:id="@+id/password_edittext_registration"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:background="@drawable/rounded_edittext_register_login"
+            android:hint="@string/password"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            android:password="true"
+            app:layout_constraintEnd_toEndOf="@+id/email_edittext_registration"
+            app:layout_constraintStart_toStartOf="@+id/email_edittext_registration"
+            app:layout_constraintTop_toBottomOf="@+id/email_edittext_registration" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_button"
+            android:onClickListener="@{() -> viewModel.getEmailAndPass()}"
+            android:text="@string/register_button"
+            android:textColor="@color/secondaryTextColor"
+            app:layout_constraintEnd_toEndOf="@+id/password_edittext_registration"
+            app:layout_constraintStart_toStartOf="@+id/password_edittext_registration"
+            app:layout_constraintTop_toBottomOf="@+id/password_edittext_registration" />
+
+        <TextView
+            android:id="@+id/have_account_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/have_account"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/register_button"
+            app:layout_constraintStart_toStartOf="@+id/register_button"
+            app:layout_constraintTop_toBottomOf="@+id/register_button"
+            android:onClickListener="@{() -> viewModel.toLoginFragment()}"/>
+
+        <Button
+            android:id="@+id/selectphoto_button_register"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            android:background="@drawable/circle_button"
+            android:text="@string/select_photo"
+            android:textColor="@color/secondaryTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClickListener="@{() -> viewModel.startSelectPhoto()}"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/selectphoto_imageview_register"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/secondaryColor"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/selectphoto_button_register"
+            app:layout_constraintEnd_toEndOf="@+id/selectphoto_button_register"
+            app:layout_constraintStart_toStartOf="@+id/selectphoto_button_register"
+            app:layout_constraintTop_toTopOf="@+id/selectphoto_button_register" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
