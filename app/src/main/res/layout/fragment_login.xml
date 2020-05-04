@@ -18,27 +18,21 @@
 
         <EditText
             android:id="@+id/email_edittext_login"
-            android:layout_width="347dp"
-            android:layout_height="50dp"
+            style="@style/rounded_edittext"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/rounded_edittext_register_login"
-            android:ems="10"
             android:hint="@string/email"
             android:inputType="textPersonName"
-            android:paddingLeft="16dp"
             app:layout_constraintBottom_toTopOf="@+id/password_edittext_login"
             app:layout_constraintEnd_toEndOf="@+id/password_edittext_login"
             app:layout_constraintStart_toStartOf="@+id/password_edittext_login" />
 
         <EditText
             android:id="@+id/password_edittext_login"
-            android:layout_width="347dp"
-            android:layout_height="50dp"
-            android:background="@drawable/rounded_edittext_register_login"
-            android:ems="10"
+            style="@style/rounded_edittext"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:hint="@string/password"
             android:inputType="textPersonName"
-            android:paddingLeft="16dp"
             android:password="true"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,13 +40,10 @@
 
         <Button
             android:id="@+id/login_button"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            style="@style/roudnded_wide_button"
             android:layout_marginTop="24dp"
-            android:background="@drawable/rounded_button"
             android:onClick="@{() -> viewModel.getEmailAndPass()}"
             android:text="@string/login_button"
-            android:textColor="@color/secondaryTextColor"
             app:layout_constraintEnd_toEndOf="@+id/password_edittext_login"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/password_edittext_login"

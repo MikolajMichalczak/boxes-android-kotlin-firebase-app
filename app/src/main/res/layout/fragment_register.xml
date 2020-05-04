@@ -18,44 +18,32 @@
 
         <EditText
             android:id="@+id/username_edittext_registration"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            style="@style/rounded_edittext"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:background="@drawable/rounded_edittext_register_login"
-            android:ems="10"
             android:hint="@string/username"
             android:inputType="textPersonName"
-            android:paddingLeft="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/selectphoto_button_register" />
 
         <EditText
             android:id="@+id/email_edittext_registration"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:hint="@string/email"
-            android:background="@drawable/rounded_edittext_register_login"
-            android:inputType="textPersonName"
-            android:paddingLeft="16dp"
             app:layout_constraintEnd_toEndOf="@+id/username_edittext_registration"
             app:layout_constraintStart_toStartOf="@+id/username_edittext_registration"
-            app:layout_constraintTop_toBottomOf="@+id/username_edittext_registration" />
+            app:layout_constraintTop_toBottomOf="@+id/username_edittext_registration"
+            style="@style/rounded_edittext" />
 
         <EditText
             android:id="@+id/password_edittext_registration"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
+            style="@style/rounded_edittext"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:background="@drawable/rounded_edittext_register_login"
             android:hint="@string/password"
             android:inputType="textPersonName"
-            android:paddingLeft="16dp"
             android:password="true"
             app:layout_constraintEnd_toEndOf="@+id/email_edittext_registration"
             app:layout_constraintStart_toStartOf="@+id/email_edittext_registration"
@@ -63,16 +51,13 @@
 
         <Button
             android:id="@+id/register_button"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/rounded_button"
             android:onClickListener="@{() -> viewModel.getEmailAndPass()}"
             android:text="@string/register_button"
-            android:textColor="@color/secondaryTextColor"
             app:layout_constraintEnd_toEndOf="@+id/password_edittext_registration"
             app:layout_constraintStart_toStartOf="@+id/password_edittext_registration"
-            app:layout_constraintTop_toBottomOf="@+id/password_edittext_registration" />
+            app:layout_constraintTop_toBottomOf="@+id/password_edittext_registration"
+            style="@style/roudnded_wide_button" />
 
         <TextView
             android:id="@+id/have_account_textview"
@@ -97,7 +82,6 @@
             android:padding="16dp"
             android:background="@drawable/circle_button"
             android:text="@string/select_photo"
-            android:textColor="@color/secondaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

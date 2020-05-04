@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.boxes.R
 import com.example.boxes.databinding.FragmentInboxBinding
+import com.example.boxes.screens.addfriends.AddFriendsFragment
 import com.example.boxes.screens.provided.ProvidedFragment
 import com.example.boxes.screens.send.SendFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -76,6 +77,10 @@ class InboxFragment : Fragment() {
                 FirebaseAuth.getInstance().signOut()
                 findNavController().navigate(R.id.action_inboxFragment_to_registerFragment)
             }
+            R.id.menu_add_friend -> {
+                loadFragment(AddFriendsFragment())
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -91,11 +96,7 @@ class InboxFragment : Fragment() {
         val transaction = getActivity()?.getSupportFragmentManager()?.beginTransaction()
         if (transaction != null) {
             transaction.replace(R.id.fragmentContainer, fragment)
-        }
-        if (transaction != null) {
             transaction.addToBackStack(null)
-        }
-        if (transaction != null) {
             transaction.commit()
         }
     }
