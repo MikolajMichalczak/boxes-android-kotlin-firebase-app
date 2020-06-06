@@ -19,23 +19,37 @@
             style="@style/rounded_edittext"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:hint="@string/username"
+            android:layout_marginBottom="24dp"
             android:ems="10"
+            android:hint="@string/username"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintBottom_toTopOf="@+id/addfiends_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/addfiends_button"
             style="@style/roudnded_wide_button"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{() -> viewModel.inviteFriend()}"
             android:text="@string/add_friend"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerview_invitations"
             app:layout_constraintEnd_toEndOf="@+id/username_edittext_addfriends"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/username_edittext_addfriends"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            android:onClick="@{() -> viewModel.inviteFriend()}"/>
+            app:layout_constraintStart_toStartOf="@+id/username_edittext_addfriends" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_invitations"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="56dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -43,6 +57,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_invites"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerview_invitations"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerview_invitations"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recyclerview_invitations" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

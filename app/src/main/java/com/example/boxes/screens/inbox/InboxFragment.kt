@@ -1,6 +1,5 @@
 package com.example.boxes.screens.inbox
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -12,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.boxes.R
 import com.example.boxes.databinding.FragmentInboxBinding
 import com.example.boxes.screens.addfriends.AddFriendsFragment
-import com.example.boxes.screens.provided.ProvidedFragment
+import com.example.boxes.screens.recents.RecentsFragment
 import com.example.boxes.screens.send.SendFragment
 import com.google.firebase.auth.FirebaseAuth
 
@@ -47,8 +46,8 @@ class InboxFragment : Fragment() {
                     return@setOnNavigationItemSelectedListener true
                 }
 
-                R.id.menu_provided-> {
-                    loadFragment(ProvidedFragment())
+                R.id.menu_recents-> {
+                    loadFragment(RecentsFragment())
                     return@setOnNavigationItemSelectedListener true
                 }
 

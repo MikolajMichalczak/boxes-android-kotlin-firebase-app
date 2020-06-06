@@ -80,6 +80,7 @@
             android:layout_height="150dp"
             android:layout_marginTop="32dp"
             android:padding="16dp"
+            android:textColor="@color/secondaryTextColor"
             android:background="@drawable/circle_button"
             android:text="@string/select_photo"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/constraint_layout"
+    android:layout_marginTop="16dp">
+
+    <TextView
+        android:id="@+id/textview_friend_username"
+        android:layout_width="73dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/username"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/image_friend_avatar"
+        app:layout_constraintStart_toEndOf="@+id/image_friend_avatar"
+        app:layout_constraintTop_toTopOf="@+id/image_friend_avatar" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_friend_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+    <Button
+        android:id="@+id/invite_accept_button"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="@+id/textview_friend_username"
+        app:layout_constraintEnd_toStartOf="@+id/invite_discard_button"
+        app:layout_constraintTop_toTopOf="@+id/textview_friend_username" />
+
+    <Button
+        android:id="@+id/invite_discard_button"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/invite_accept_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/invite_accept_button" />
+
+    <TextView
+        android:id="@+id/rounded_textview"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_textview"
+        android:textColor="@color/secondaryTextColor"
+        android:padding="4dp"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textview_friend_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textview_friend_username" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

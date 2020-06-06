@@ -7,6 +7,10 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel : ViewModel() {
 
+    private var _showFailureToast = MutableLiveData<String>()
+    val showFailureToast: LiveData<String>
+        get() = _showFailureToast
+
     private var _toRegister = MutableLiveData<Boolean>()
     val toRegister: LiveData<Boolean>
         get() = _toRegister
@@ -42,7 +46,7 @@ class LoginViewModel : ViewModel() {
                 _toInbox.value = true
             }
             .addOnFailureListener{
-
+                _showFailureToast.value = "Failed to create user: ${it.message}"
             }
         _getPassAndEmail.value = false
     }

@@ -1,4 +1,4 @@
-package com.example.boxes.screens.provided
+package com.example.boxes.screens.recents
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.boxes.R
 import com.example.boxes.databinding.FragmentProvidedBinding
 
-class ProvidedFragment : Fragment() {
+class RecentsFragment : Fragment() {
 
-    private lateinit var viewModel: ProvidedViewModel
+    private lateinit var viewModel: RecentsViewModel
 
     private lateinit var binding: FragmentProvidedBinding
 
@@ -23,7 +23,7 @@ class ProvidedFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_provided, container, false)
 
-        viewModel = ViewModelProviders.of(this).get(ProvidedViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(RecentsViewModel::class.java)
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 

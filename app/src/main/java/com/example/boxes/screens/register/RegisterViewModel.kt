@@ -93,7 +93,7 @@ class RegisterViewModel : ViewModel() {
                     }
                 }
                 .addOnFailureListener {
-                    //Log
+                    Log.d("RegisterViewModel", "${it.message}")
                 }
     }
 

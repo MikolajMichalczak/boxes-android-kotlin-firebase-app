@@ -1,8 +1,8 @@
-package com.example.boxes.screens.provided
+package com.example.boxes.screens.recents
 
 import androidx.lifecycle.ViewModel
 
-class ProvidedViewModel: ViewModel() {
+class RecentsViewModel: ViewModel() {
 
     init{
 
