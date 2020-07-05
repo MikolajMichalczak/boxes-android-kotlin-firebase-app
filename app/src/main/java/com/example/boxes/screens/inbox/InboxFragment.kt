@@ -70,7 +70,7 @@ class InboxFragment : Fragment() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item?.itemId) {
             R.id.menu_sign_out -> {
                 FirebaseAuth.getInstance().signOut()

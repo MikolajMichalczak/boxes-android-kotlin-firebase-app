@@ -86,7 +86,7 @@ class AddFriendsViewModel: ViewModel() {
     }
 
     private fun sendInvite(_userUsername:String?, _uid:String?, userImageUrl:String){
-        val Invref = FirebaseDatabase.getInstance().getReference("/users/$_uid/invitations").push()
+        val invref = FirebaseDatabase.getInstance().getReference("/users/$_uid/invitations").push()
         val ref = FirebaseDatabase.getInstance().getReference("/users/$_uid/invitations").orderByChild("username").equalTo(_userUsername)
         val invitation = Invitation(_userUsername, userImageUrl,  _uid)
 
@@ -97,7 +97,7 @@ class AddFriendsViewModel: ViewModel() {
                     _inviteToast.value = "You have already sent an invitation to this user"
                 }
                 else {
-                    Invref.setValue(invitation)
+                    invref.setValue(invitation)
                         .addOnSuccessListener {
                             _inviteToast.value = "Invite sended"
                         }

@@ -35,7 +35,7 @@ class RegisterFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
         binding.viewModel = viewModel
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
         viewModel.toLogin.observe(this, Observer {state ->
             navigateToLoginFragment(state)
@@ -97,7 +97,7 @@ class RegisterFragment : Fragment() {
 
         if(requestCode==0 && resultCode == Activity.RESULT_OK && data!=null){
             val uri = data.data
-            val bitmap = MediaStore.Images.Media.getBitmap(getActivity()?.getContentResolver(), uri)
+            val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, uri)
             binding.selectphotoImageviewRegister.setImageBitmap(bitmap)
             binding.selectphotoButtonRegister.alpha = 0f
             viewModel.selectedPhotoUri = uri

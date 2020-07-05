@@ -16,7 +16,7 @@ class InvitationItem (val invitation: Invitation, val onInvitationDiscardClick: 
             viewHolder.itemView.rounded_textview.visibility = View.VISIBLE
             viewHolder.itemView.invite_accept_button.visibility = View.GONE
             viewHolder.itemView.invite_discard_button.visibility = View.GONE
-            viewHolder.itemView.rounded_textview.text = "Rejected"
+            viewHolder.itemView.rounded_textview.setText(R.string.rejected)
         }
 
         Picasso.get().load(invitation.userImageUrl).into(viewHolder.itemView.image_friend_avatar)
